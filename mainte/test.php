@@ -1,11 +1,8 @@
 <?php
-// パスワードを記録したファイルの場所
 
+$contactFile = '.contact.dat';
 
-echo __FILE__;
-// /Applications/MAMP/htdocs/contactForm/mainte/test.php
+$fileContents = file_get_contents($contactFile);
+echo $fileContents;
 
-echo '<br>';
-// パスワード(暗号化)
-echo(password_hash('password123', PASSWORD_BCRYPT));
 ?>

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName 'パスワードを入力してください'
+AuthUserFile /Applications/MAMP/htdocs/contactForm/mainte/,htpasswd.php
+require valid-user

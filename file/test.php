@@ -20,7 +20,7 @@ foreach($allData as $lineData){
   echo $lines[0]. '<br>';
   echo $lines[1]. '<br>';
   echo $lines[2]. '<br>';
-}
+} 
 
 
 ?>

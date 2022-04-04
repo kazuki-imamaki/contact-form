@@ -105,6 +105,7 @@ if (!empty($_POST['btn-submit'])) {
         <input type="hidden" name="email" value="<?php echo h($_POST['email']) ?>">
         <input type="hidden" name="url" value="<?php echo h($_POST['url']) ?>">
         <input type="hidden" name="gender" value="<?php echo h($_POST['gender']) ?>">
+        <input type="hidden" name="age" value="<?php echo h($_POST['age']) ?>">
         <input type="hidden" name="contact" value="<?php echo h($_POST['contact']) ?>">
         <input type="hidden" name="csrf" value="<?php echo h($_POST['csrf']) ?>">
       </form>
@@ -113,6 +114,10 @@ if (!empty($_POST['btn-submit'])) {
 
   <?php if ($pageFlag === 2) : ?>
     <?php if ($_POST['csrf'] === $_SESSION['csrfToken']) : ?>
+
+      <?php require '../mainte/insert.php';
+      insertContact($_POST);
+      ?>
       送信が完了しました
 
       <?php unset($_SESSION['csrfToken']); ?>
@@ -166,7 +171,8 @@ if (!empty($_POST['btn-submit'])) {
                                                                                                   echo 'checked';
                                                                                                 } ?>>
               <label class="form-check-label" for="gender1">男性</label>
-
+            </div>
+            <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="gender" id="gender2" value="1" <?php if (!empty($_POST['gender']) && $_POST['gender'] === '1') {
                                                                                                   echo 'checked';
                                                                                                 } ?>>

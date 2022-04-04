@@ -17,15 +17,14 @@ trait NewsTrait{
 
 class Product{
 
-  use ProductTrait;
-  use NewsTrait;
+  use ProductTrait, NewsTrait;
 
   public function getInformation(){
     echo 'クラスです';
   }
 }
 
-$product = new Product();
+// $product = new Product;
 
 $product->getInformation();
 $product->getNews();
